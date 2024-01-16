@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>My page title</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Here is our main header that is used across all the pages of our website -->
+
+    <header>
+      <h1>My Weather Project</h1>
+    </header>
+
+    <nav>
+    
+
+      <!-- A Search form is another common non-linear way to navigate through a website. -->
+
+      <form>
+        <input type="search" name="q" placeholder="Search query" />
+        <input type="submit" value="Go!" />
+      </form>
+    </nav>
+
+    <!-- Here is our page's main content -->
+    <main>
+      <!-- It contains an article -->
+      <article>
+        <h2>Select a country</h2>
+        <form method="post">
+        <select name="city" class="form-control" id="city">
+          <option value="0" label="Select a City ... " selected="selected">Select a City ... </option>
+                 
+              <option value="London" label="London">London</option>
+              <option value="Buenos Aires" label="Buenos Aires">Buenos Aires</option>
+
+          </optgroup>
+      </select>
+      {% if data %}
+      <p>Temperature: {{ data['main']['temp'] }} ┬░C</p>
+      <p>Temperature feeling: {{ data['main']['feels_like'] }} ┬░C</p>
+      <p>Pressure: {{ data['main']['pressure'] }} hPa</p>
+      <p>Humidity: {{ data['main']['humidity'] }} %</p>
+    {% endif %}
+      <button type="submit">search</button>
+
+    </form>
+        
+    {{googlemap("my_awesome_map", lat=0.23234234, lng=-0.234234234, markers=[(0.12,
+    -0.45345)])}}
+   </main>
+
+    <!-- And here is our main footer that is used across all the pages of our website -->
+
+    <footer>
+    </footer>
+  </body>
+</html>
