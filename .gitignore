@@ -20,3 +20,4 @@ _site/
 Python/1-Weather-Flask/Lib/*
 Python/1-Weather-Flask/Scripts/*
 */Scripts/*
+Kubernetes/templates/*

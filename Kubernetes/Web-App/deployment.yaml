@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Web-App
+  namespace: web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: Web-App
+  template:
+    metadata:
+      labels:
+        app:  Web-App
+    spec:
+      container:
+        - name: Web-App
+          image: roxsross12/k8s_test_web:latest
+          ports:
+            - cointainerPorts: 80
+
+
