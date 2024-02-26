@@ -19,7 +19,7 @@ def index():
         url_path = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&appid='+SECRET_KEY
         r=requests.get(url_path)
         data=r.json()
-        return render_template('index.html',city=city,data=data)
+        return render_template('index.html',city=city,data=data,key=MAPS_KEY)
     else:
         return render_template("index.html")
 

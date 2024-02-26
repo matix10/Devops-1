@@ -48,13 +48,27 @@
       <p>Temperature feeling: {{ data['main']['feels_like'] }} ┬░C</p>
       <p>Pressure: {{ data['main']['pressure'] }} hPa</p>
       <p>Humidity: {{ data['main']['humidity'] }} %</p>
+    
     {% endif %}
       <button type="submit">search</button>
-
+  
     </form>
+    {% if key %} 
+    {% if city %}
+          <iframe
         
-    {{googlemap("my_awesome_map", lat=0.23234234, lng=-0.234234234, markers=[(0.12,
-    -0.45345)])}}
+          width="600"
+          height="450"
+          style="border:0"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?key={{key}}&q={{city}}">
+        </iframe>
+        {% endif %}
+  {% endif %}
+        
+  
    </main>
 
     <!-- And here is our main footer that is used across all the pages of our website -->
